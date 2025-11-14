@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Section, Card } from "@/components/ui/animated-components";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
+import teamImg from "@/assets/about-team.jpg";
+import workspaceImg from "@/assets/about-workspace.jpg";
 
 const About = () => {
   return (
@@ -48,11 +50,29 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Story */}
+      {/* Story with Images */}
       <Section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="font-heading text-4xl font-bold text-foreground mb-8 text-center">Our Story</h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              <div className="rounded-2xl overflow-hidden h-96">
+                <img 
+                  src={teamImg} 
+                  alt="Omega Event Management Team" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden h-96">
+                <img 
+                  src={workspaceImg} 
+                  alt="Our Creative Workspace" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
             <Card className="glass-strong">
               <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
                 <p>

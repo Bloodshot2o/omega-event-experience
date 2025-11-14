@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 import weddingImg from "@/assets/wedding-service.jpg";
 import corporateImg from "@/assets/corporate-service.jpg";
 import birthdayImg from "@/assets/birthday-service.jpg";
+import soundLightingImg from "@/assets/sound-lighting-service.jpg";
+import themeDecorImg from "@/assets/theme-decor-service.jpg";
+import photographyImg from "@/assets/photography-service.jpg";
+import cateringImg from "@/assets/catering-service.jpg";
+import venueImg from "@/assets/venue-service.jpg";
 
 const services = [
   {
@@ -35,35 +40,35 @@ const services = [
     icon: Music,
     title: "Sound & Lighting",
     description: "State-of-the-art audio-visual solutions that create immersive event experiences. Professional sound systems, dynamic lighting design, and LED displays that bring your event to life with technical excellence.",
-    image: null,
+    image: soundLightingImg,
     features: ["Professional Sound Systems", "Dynamic Lighting Design", "LED Displays", "Stage Setup"],
   },
   {
     icon: Sparkles,
     title: "Theme Décor",
     description: "Transform any venue into a breathtaking space with our creative décor concepts. From elegant florals to dramatic installations, we craft stunning visual experiences that captivate and inspire your guests.",
-    image: null,
+    image: themeDecorImg,
     features: ["Floral Arrangements", "Fabric Draping", "Prop Design", "Entrance Décor"],
   },
   {
     icon: Camera,
     title: "Photography & Videography",
     description: "Capture every precious moment with cinematic excellence. Our professional photography and videography services ensure your memories are preserved in stunning detail, telling the story of your event beautifully.",
-    image: null,
+    image: photographyImg,
     features: ["Event Photography", "Cinematic Videography", "Drone Coverage", "Same-Day Edits"],
   },
   {
     icon: Utensils,
     title: "Catering Services",
     description: "Delight your guests with exceptional culinary experiences. Our catering partners deliver exquisite menus tailored to your preferences, dietary requirements, and event theme, ensuring every bite is memorable.",
-    image: null,
+    image: cateringImg,
     features: ["Custom Menus", "Live Cooking Stations", "Beverage Services", "Dietary Accommodations"],
   },
   {
     icon: MapPin,
     title: "Venue Management",
     description: "End-to-end venue management that handles every logistical detail. From setup to breakdown, we ensure your chosen space is perfectly prepared and professionally managed throughout your event.",
-    image: null,
+    image: venueImg,
     features: ["Site Inspection", "Layout Planning", "Logistics Coordination", "Vendor Access Management"],
   },
 ];
@@ -114,16 +119,24 @@ const Services = () => {
                   {service.description}
                 </p>
 
-                <div className="space-y-2">
-                  <h4 className="font-sub text-sm font-semibold text-foreground mb-3">Key Features:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {service.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="font-body text-sm text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-sub text-sm font-semibold text-foreground mb-3">Key Features:</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {service.features.map((feature, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <span className="font-body text-sm text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  
+                  <Link to="/book" className="block">
+                    <Button className="w-full bg-primary hover:bg-gold-glow text-primary-foreground font-sub font-semibold glow-gold">
+                      Book This Service
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             ))}
